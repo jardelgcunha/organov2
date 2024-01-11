@@ -3,14 +3,15 @@ import './time.css'
 
 const Time = ({ time, colaboradores, aoDeletar }) => {
     return (
-        colaboradores.length > 0 && <section className='time' style={{ backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: time.corPrimaria }}>
-            <h3 style={{ borderColor: time.corSecundaria }}>{time.nome}</h3>
+        colaboradores.length > 0 && <section className='time' style={{ backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: time.corSecundaria }}>
+            <input value={time.corPrimaria} type='color' className='input-cor' />
+            <h3 style={{ borderColor: time.corPrimaria }}>{time.nome}</h3>
             <div className='colaboradores'>
                 {colaboradores.map((colaborador, indice) => {
                     return <Colaborador
                         key={indice}
                         colaborador={colaborador}
-                        corDeFundo={time.corSecundaria}
+                        corDeFundo={time.corPrimaria}
                         aoDeletar={aoDeletar}
                     />
                 })}

@@ -11,11 +11,10 @@ const Formulario = ({ aoCadastrar, times, cadastrarTime }) => {
     const [imagem, setImagem] = useState('')
     const [time, setTime] = useState('')
     const [nomeTime, setNomeTime] = useState('')
-    const [corTime, setCorTime] = useState('')
+    const [corTime, setCorTime] = useState('#000000')
 
     const aoSubmeter = (evento) => {
         evento.preventDefault()
-        console.log('form enviado', nome, cargo, imagem, time)
         aoCadastrar({
             nome,
             cargo,
@@ -63,7 +62,7 @@ const Formulario = ({ aoCadastrar, times, cadastrarTime }) => {
                 evento.preventDefault()
                 cadastrarTime({ nome: nomeTime, cor: corTime })
                 setNomeTime('')
-                setCorTime('')
+                setCorTime('#000000')
             }}>
                 <h2>Preencha os dados para criar um novo time.</h2>
                 <Campo
